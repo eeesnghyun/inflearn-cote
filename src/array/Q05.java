@@ -16,7 +16,7 @@ public class Q05 {
 
     public static int solution(int cnt) {
         int result = 0;
-        boolean arr[] = new boolean[cnt];
+        boolean[] arr = new boolean[cnt];
 
         //1은 소수가 아니기 때문에 제외
         for (int i = 1; i < cnt; i++) arr[i] = true;
@@ -29,7 +29,7 @@ public class Q05 {
         }
 
         for (int i = 0; i < cnt; i++) {
-            if (arr[i] == true) result++;
+            if (arr[i]) result++;
         }
 
         return result;
