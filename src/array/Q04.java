@@ -1,6 +1,6 @@
 package array;
 
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * className      : Q04
@@ -14,18 +14,24 @@ import java.util.Scanner;
  */
 public class Q04 {
 
-    public static String solution(String str) {
-        String result = "";
+    public static void solution(int cnt) {
+        List<Integer> resultList = new ArrayList<>();
+        int number = 1;
 
+        for (int i = 0; i < cnt; i++) {
+            if (i > 1) number = resultList.get(i-1) + resultList.get(i-2);
 
-        return result;
+            resultList.add(number);
+        }
+
+        for (int num : resultList) System.out.printf(String.valueOf(num) + " ");
     }
 
     public static void main(String[] args) {
         Scanner kb = new Scanner(System.in);
 
-        String str = kb.next();
+        int cnt = kb.nextInt();
 
-        System.out.println(solution(str));
+        solution(cnt);
     }
 }
