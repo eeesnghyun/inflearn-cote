@@ -34,7 +34,12 @@ public class Q07 {
     public static void main(String[] args) {
         Scanner kb = new Scanner(System.in);
 
-        이
+        int cnt = kb.nextInt();
+        ArrayList<Integer> arrayList = new ArrayList<>();
+
+        for (int i = 0; i < cnt; i++) {
+            arrayList.add(kb.nextInt());
+        }
 
         System.out.println(solution(arrayList));
     }
