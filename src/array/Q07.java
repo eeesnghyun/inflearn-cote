@@ -1,5 +1,6 @@
 package array;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -14,9 +15,18 @@ import java.util.Scanner;
  */
 public class Q07 {
 
-    public static String solution(String str) {
-        String result = "";
+    public static int solution(ArrayList<Integer> oxList) {
+        int result = 0;
+        int cnt = 1;
 
+        for (int ox : oxList) {
+            if (ox == 0) {
+                cnt = 1;
+            } else {
+                result += ox * cnt;
+                cnt++;
+            }
+        }
 
         return result;
     }
@@ -24,8 +34,8 @@ public class Q07 {
     public static void main(String[] args) {
         Scanner kb = new Scanner(System.in);
 
-        String str = kb.next();
+        이
 
-        System.out.println(solution(str));
+        System.out.println(solution(arrayList));
     }
 }

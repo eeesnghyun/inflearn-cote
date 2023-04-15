@@ -1,6 +1,6 @@
 package array;
 
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * className      : Q08
@@ -14,18 +14,31 @@ import java.util.Scanner;
  */
 public class Q08 {
 
-    public static String solution(String str) {
-        String result = "";
+    public static void solution(ArrayList<Integer> arrayList) {
+        int cnt = 1;
 
+        for (int tmp : arrayList) {
+            for (int score : arrayList) {
+                if (tmp < score) {
+                    cnt++;
+                }
+            }
 
-        return result;
+            System.out.print(cnt + " ");
+            cnt = 1;
+        }
     }
 
     public static void main(String[] args) {
         Scanner kb = new Scanner(System.in);
 
-        String str = kb.next();
+        int cnt = kb.nextInt();
+        ArrayList<Integer> arrayList = new ArrayList<>();
 
-        System.out.println(solution(str));
+        for (int i = 0; i < cnt; i++) {
+            arrayList.add(kb.nextInt());
+        }
+
+        solution(arrayList);
     }
 }
