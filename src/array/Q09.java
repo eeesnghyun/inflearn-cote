@@ -1,6 +1,6 @@
 package array;
 
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * className      : Q09
@@ -14,18 +14,47 @@ import java.util.Scanner;
  */
 public class Q09 {
 
-    public static String solution(String str) {
-        String result = "";
+    public static int solution(int cnt, int[][] array) {
+        int max = 0;
 
+        for (int i = 0; i < cnt; i++) {
+            int rowSum = 0;
+            int colSum = 0;
 
-        return result;
+            for (int j = 0; j < cnt; j++) {
+                rowSum += array[i][j];
+                colSum += array[j][i];
+            }
+
+            max = Math.max(max, rowSum);
+            max = Math.max(max, colSum);
+        }
+
+        int sum1 = 0, sum2 = 0;
+
+        for (int i = 0; i < cnt; i++) {
+            sum1 += array[i][i];
+            sum2 += array[i][cnt - i - 1];
+        }
+
+        max = Math.max(max, sum1);
+        max = Math.max(max, sum2);
+
+        return max;
     }
 
     public static void main(String[] args) {
         Scanner kb = new Scanner(System.in);
 
-        String str = kb.next();
+        int cnt = kb.nextInt();
+        int[][] array = new int[cnt+1][cnt+1];
 
-        System.out.println(solution(str));
+        for (int i = 0; i < cnt; i++) {
+            for (int j = 0; j < cnt; j++) {
+                array[i][j] = kb.nextInt();
+            }
+        }
+
+        System.out.println(solution(cnt, array));
     }
 }
