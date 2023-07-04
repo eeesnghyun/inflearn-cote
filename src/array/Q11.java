@@ -14,9 +14,30 @@ import java.util.Scanner;
  */
 public class Q11 {
 
-    public static String solution(String str) {
-        String result = "";
+    public static int solution(int cnt, int[][] arr) {
+        int result = 0, sum = 0;
 
+        /**
+         * 2 3 1 7 3
+         * 4 1 9 6 8
+         * 5 5 2 4 4
+         * 6 5 2 6 7
+         * 8 4 2 2 2
+         */
+        //Loop - 학생 수
+        for (int i = 0; i < cnt; i++) {
+            //Loop - 1~5학년까지
+            for (int j = 0; j < cnt; j++) {
+                for (int k = 0; k < 5; k++) {
+                    if (arr[i][k] == arr[j][k]) {
+                        sum++;
+                        break;
+                    }
+                }
+            }
+
+            
+        }
 
         return result;
     }
@@ -24,8 +45,15 @@ public class Q11 {
     public static void main(String[] args) {
         Scanner kb = new Scanner(System.in);
 
-        String str = kb.next();
+        int cnt = kb.nextInt();
+        int[][] arr = new int[cnt][5];
 
-        System.out.println(solution(str));
+        for (int i = 0; i < cnt; i++) {
+            for (int j = 0; j < 5; j++) {
+                arr[i][j] = kb.nextInt();
+            }
+        }
+
+        System.out.println(solution(cnt, arr));
     }
 }
