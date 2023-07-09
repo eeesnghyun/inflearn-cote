@@ -4,7 +4,7 @@ import java.util.*;
 import java.io.*;
 
 /**
- * className      : Q01
+ * className      : Q02
  * author         : eeesnghyun
  * date           : 2023/07/09
  * description    : 04-02 아나그램(HashMap)
@@ -14,7 +14,7 @@ import java.io.*;
  * -----------------------------------------------------------
  * 2023/07/09        eeesnghyun        최초 생성
  */
-public class Q01 {
+public class Q02 {
 
     public static void solution(String word1, String word2) {
         String result = "YES";
